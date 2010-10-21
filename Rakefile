@@ -15,9 +15,9 @@ spec = Gem::Specification.new do |gem|
   gem.authors = ["Jason Noble"]
   gem.add_dependency(["pivotal-tracker"])
   gem.add_dependency(["yaml"])
-  gem.autorequire = gem.name
-  gem.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{bin,config}/**/*")
+  gem.autorequire = GEM
   gem.executables = ['tracker-custom-points.rb']
+  gem.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{bin,config}/**/*")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
