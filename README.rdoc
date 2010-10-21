@@ -1,11 +1,11 @@
-Quick Start
-====================================================================
-cp config.yml.example config.yml
-vi config.yml
-ruby ./tracker_custom_points.rb
-====================================================================
+= Tracker Custom Points
 
-Custom Point Values for Pivotal Tracker
+== Quick Start
+    cp config.yml.example config.yml
+    vi config.yml
+    ruby ./tracker_custom_points.rb
+
+== Custom Point Values for Pivotal Tracker
 
   Pivotal Tracker has three options when it comes to 
   point values: Powers of Two, Fibonacci and Linear.
@@ -14,7 +14,7 @@ Custom Point Values for Pivotal Tracker
   and use ?, 0, 1/2, 1, 2, 3, 5, 8, 13, 20, 40, 100
   and infinity as point values.
 
-Mapping Planning Poker to Pivotal Tracker
+== Mapping Planning Poker to Pivotal Tracker
 
   This script has a mapping table that maps Tracker's 
   point values to the planning poker values and vice-versa.
@@ -31,7 +31,7 @@ Mapping Planning Poker to Pivotal Tracker
 
   If you want to modify these mappings, edit mappings.yml.
 
-How this script works
+== How this script works
   
   This script will look through your Pivotal Tracker Project(s)
   and for each unfinished story, it will set the estimate in 
@@ -51,3 +51,17 @@ How this script works
   This script will then change the point estimate on that story
   according to your mappings.
 
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2010 Jason Noble. See LICENSE for details.
