@@ -1,0 +1,53 @@
+Quick Start
+====================================================================
+cp config.yml.example config.yml
+vi config.yml
+ruby ./tracker_custom_points.rb
+====================================================================
+
+Custom Point Values for Pivotal Tracker
+
+  Pivotal Tracker has three options when it comes to 
+  point values: Powers of Two, Fibonacci and Linear.
+
+  I wanted to be able to use the Planning Poker cards
+  and use ?, 0, 1/2, 1, 2, 3, 5, 8, 13, 20, 40, 100
+  and infinity as point values.
+
+Mapping Planning Poker to Pivotal Tracker
+
+	This script has a mapping table that maps Tracker's 
+  point values to the planning poker values and vice-versa.
+
+  Default Point Mapping:
+    Poker Points          Pivotal Tracker Points
+    ===============       ===============================
+		0, 1/2								0 
+    1, 2  								1 
+    3, 5  								2 
+    8, 13 								3 
+    20, 40 								5 
+    100  								  8 
+
+  If you want to modify these mappings, edit mappings.yml.
+
+How this script works
+  
+  This script will look through your Pivotal Tracker Project(s)
+  and for each unfinished story, it will set the estimate in 
+  Pivotal Tracker.  
+
+  In your pivotal tracker subject line, add the Planning Poker
+  point estimate.  
+
+  Change
+
+    Implement Login Page
+
+  to
+  
+    (5) Implement Login Page
+
+  This script will then change the point estimate on that story
+  according to your mappings.
+
