@@ -13,8 +13,14 @@ config['projects'].each do |project_id|
   stories.each do |story|
     point_estimate = story.name[ /\(([\d\/]+)\)/, 1]
     if point_estimate && mappings[point_estimate] && story.estimate != mappings[point_estimate]
-      puts "Updating story #{story.id} point estimate to #{mappings[point_estimate]}"
-    	story.update(:estimate => mappings[point_estimate])
+      print "Updating story #{story.id} point estimate to #{mappings[point_estimate]}..."
+      begin
+        story.update(:estimate => mappings[point_estimate])
+      rescue RestClient::RequestFailed
+        print "Update failed"
+      ensure
+        puts ""
+      end
     end
   end
 end
