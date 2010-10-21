@@ -3,19 +3,21 @@ require 'rake/gempackagetask'
 require 'rubygems/specification'
 require 'rake'
 
+GEM='tracker_custom_points'
+
 spec = Gem::Specification.new do |gem|
-  gem.name = "tracker_custom_points"
+  gem.name = GEM
   gem.version = "0.0.1"
   gem.summary = %Q{Custom Point Values for Pivotal Tracker}
   gem.description = %Q{Custom Point Values for Pivotal Tracker}
   gem.email = "perlwizard@gmail.com"
-  gem.homepage = "http://github.com/jasonnoble/tracker_custom_points"
+  gem.homepage = "http://github.com/jasonnoble/#{GEM}"
   gem.authors = ["Jason Noble"]
   gem.add_dependency(["pivotal-tracker"])
   gem.add_dependency(["yaml"])
   gem.autorequire = gem.name
   gem.files = %w(LICENSE README.rdoc Rakefile) + Dir.glob("{bin,config}/**/*")
-  gem.executables = ['tracker-custom-points']
+  gem.executables = ['tracker-custom-points.rb']
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
