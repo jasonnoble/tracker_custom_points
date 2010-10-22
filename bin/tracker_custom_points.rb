@@ -2,8 +2,19 @@ require 'rubygems'
 require 'pivotal-tracker'
 require 'yaml'
 
-config = YAML.load(open(File.join(File.dirname(__FILE__), 'config.yml')))
-mappings = YAML.load(open(File.join(File.dirname(__FILE__), 'mappings.yml')))
+if File.exists?(File.join(ENV['HOME'], '.tracker_custom_points_config.yml'))
+  config = YAML.load(open(File.join(ENV['HOME'], '.tracker_custom_points_config.yml')))
+else
+  puts "You do not have your tracker_custom_points_config.yml file setup"
+  puts "\tcp #{File.join(File.dirname(__FILE__), '../config/config.yml.example')} ~/.tracker_custom_points_config.yml"
+  exit
+end
+
+if File.exists?(File.join(ENV['HOME'], '.tracker_custom_points_mappings.yml'))
+  mappings = YAML.load(open(File.join(ENV['HOME'], '.tracker_custom_points_mappings.yml')))
+else
+  mappings = YAML.load(open(File.join(File.dirname(__FILE__), '../config/mappings.yml')))
+end
 
 PivotalTracker::Client.token = config['token']
 
