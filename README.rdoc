@@ -1,9 +1,9 @@
 = Tracker Custom Points
 
 == Quick Start
-    cp config.yml.example config.yml
-    vi config.yml
-    ruby ./tracker_custom_points.rb
+    cp config.yml.example ~/.tracker_custom_points_config.yml
+    vi ~/.tracker_custom_points_config.yml
+    tracker_custom_points.rb
 
 == Custom Point Values for Pivotal Tracker
 
@@ -29,7 +29,8 @@
     20, 40                5 
     100                   8 
 
-  If you want to modify these mappings, edit mappings.yml.
+  If you want to modify these mappings, copy mappings.yml to 
+  ~/.tracker_custom_points_mappings.yml.
 
 == How this script works
   
